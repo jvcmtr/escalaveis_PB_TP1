@@ -30,11 +30,11 @@ export function RESTProvider( props ){
   const value = {
     metadata: meta,
     api: api,
-  };
+  }
 
   return (
     <RESTContext.Provider value={value}>{props.children}</RESTContext.Provider>
-  );
-};
+  )
+}
 
 export const useREST = () => useContext(RESTContext);

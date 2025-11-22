@@ -4,9 +4,7 @@ import { useREST } from '../services/API/RESTContext';
 import { useAuth } from '../services/UserContext';
 
 
-import Breadcrumb from '../components/base/BreadCrum';
 import EntityForm from '../components/EntityForm';
-import Centralized from '../layout/Centralized';
 import Loadable from '../components/Loadable';
 import BoxButton from '../components/base/BoxButton';
 import ConfirmButton from '../components/base/ConfirmButton';
@@ -17,9 +15,9 @@ export default function EntityDetailsPage(props){
     const notification = useNotification()
     const {api, metadata} = useREST()
     const { user } = useAuth()
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     
-    const [data, setData] = useState({});
+    const [data, setData] = useState({})
     const getData = useCallback(() => api.get(entity, id), [api, entity, id]);
 
     const back = (ev) => navigate(`/admin/${entity}`)

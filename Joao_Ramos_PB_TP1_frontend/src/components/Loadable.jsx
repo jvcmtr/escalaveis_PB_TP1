@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import LoadingSpinner from './LoadingSpinner';
 import { useNotification } from '../services/NotificationService';
 
-const Loading = () => <div>Loading...</div>;
-
 export default function Loadable(props){
   const messsage = useNotification()
   const [loading, setLoading] = useState(true);

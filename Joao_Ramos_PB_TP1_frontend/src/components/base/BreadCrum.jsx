@@ -7,11 +7,11 @@ export default function Breadcrumb(props){
   const location = useLocation();
   const navigate = useNavigate();
 
-  const breadcrums = location.pathname.split('/').filter(i => i.length > 0);
+  const breadcrums = location.pathname.split('/').filter(i => i.length > 0)
   const items = []
   
   breadcrums.forEach((a, i) => {
-    if (i > 0) items.push( <span style={{fontSize: "0.8rem"}}> / </span>);
+    if (i > 0) items.push( <span style={{fontSize: "0.8rem"}}> / </span>)
 
     let url = "/" + breadcrums.slice(0, i + 1).join('/')
     items.push(<InlineButton onClick={()=>navigate(url)}> {a} </InlineButton>)

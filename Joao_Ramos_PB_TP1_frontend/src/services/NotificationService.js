@@ -5,7 +5,7 @@ export const ENotificationTypes = Object.freeze({
   ERROR: "ERROR",
   SUCCESS: "SUCCESS",
   INFO: "INFO",
-});
+})
 
 const NotificationContext = createContext(null);
 

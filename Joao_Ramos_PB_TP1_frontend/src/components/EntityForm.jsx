@@ -1,10 +1,6 @@
-// EntityForm.tsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-import {useREST} from "../services/API/RESTContext";
-import DynamicInput from "./base/DynamicInput";
-import BoxButton from "./base/BoxButton";
-import InlineButton from "./base/InlineButton";
+import DynamicInput from "./base/DynamicInput"
 
 export default function EntityForm(props) {
     const data = props.data || {}
@@ -15,10 +11,10 @@ export default function EntityForm(props) {
         }
     }, [props.data])
 
-    const entityMeta = props.metadata.entities.find((e) => e.name === props.entity);
-    const fields = [...props.metadata.baseFields, ...entityMeta.fields];
+    const entityMeta = props.metadata.entities.find((e) => e.name === props.entity)
+    const fields = [...props.metadata.baseFields, ...entityMeta.fields]
 
-    const onChange = (name, value) => props.onChange((d) => ({ ...d, [name]: value }));
+    const onChange = (name, value) => props.onChange((d) => ({ ...d, [name]: value }))
 
     return (
         <div>
@@ -32,5 +28,5 @@ export default function EntityForm(props) {
                 />
             ))}
         </div>
-    );
-};
+    )
+}

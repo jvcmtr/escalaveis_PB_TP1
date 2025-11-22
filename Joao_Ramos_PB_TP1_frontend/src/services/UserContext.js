@@ -12,12 +12,12 @@ export function UserProvider({ children }) {
     const stored = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
     if (stored) {
       try {
-        setUser(JSON.parse(stored));
+        setUser(JSON.parse(stored))
       } catch {
-        setUser(null);
+        setUser(null)
       }
     }
-  }, []);
+  }, [])
 
   // Save or remove user on change
   useEffect(() => {
@@ -26,26 +26,26 @@ export function UserProvider({ children }) {
     } else {
       localStorage.removeItem(USER_LOCAL_STORAGE_KEY);
     }
-  }, [user]);
+  }, [user])
 
   const login = useCallback((user) => {
     if (user.username.trim()) {
-      setUser(user);
+      setUser(user)
     }
-  }, []);
+  }, [])
 
   const logout = useCallback(() => {
-    setUser(null);
-  }, []);
+    setUser(null)
+  }, [])
 
   return (
     <UserContext.Provider value={{ user, login, logout }}>
       {children}
     </UserContext.Provider>
-  );
+  )
 }
 
 
 export function useAuth() {
-    return useContext(UserContext);
+    return useContext(UserContext)
 }

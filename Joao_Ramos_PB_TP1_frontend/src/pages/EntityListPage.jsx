@@ -2,8 +2,6 @@ import React from 'react';
 import { useParams, useNavigate  } from 'react-router-dom';
 import { useREST } from '../services/API/RESTContext';
 
-import Centralized from '../layout/Centralized';
-import Breadcrumb from '../components/base/BreadCrum';
 import EntityTable from '../components/EntityTable'
 import Loadable from '../components/Loadable';
 import BoxButton from '../components/base/BoxButton';

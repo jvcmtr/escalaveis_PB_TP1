@@ -9,10 +9,10 @@ import { useNotification } from "../services/NotificationService";
 export default function LoginPage() {
   const message = useNotification()
   const [searchParams] = useSearchParams()
-  const authService = useAuth();
-  const navigate = useNavigate();
+  const authService = useAuth()
+  const navigate = useNavigate()
   
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("")
   const next = searchParams.get("next") || "/"
   
   const login = () => {

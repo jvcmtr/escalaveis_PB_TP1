@@ -4,7 +4,7 @@ import { useNotification } from "../services/NotificationService";
 
 export default function NotificationColumn(props) {
     const {messages} = useNotification()
-    // const messages = [1, 2, 3, 4, 5, 6, 7]
+
   return (
     <div
       style={{
@@ -27,7 +27,6 @@ export default function NotificationColumn(props) {
       {
         messages.map(m => {
             return (
-                // <div style={{height:"100px", width:"100px", backgroundColor:"#ff0000"}}/>
                 <NotificationPopup notification={m} style={{pointerEvents:"auto"}}/>
             )
         })

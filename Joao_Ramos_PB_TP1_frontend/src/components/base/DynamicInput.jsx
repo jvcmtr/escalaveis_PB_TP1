@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SelectInput from "./SelectInput";
-import DateInput from "./DateInput";
 import TextInput from "./TextInput";
 import NumberInput from "./NumberInput";
 import { COLORS } from "../../services/StyleService";
@@ -31,9 +30,6 @@ export default function DynamicInput(props){
     }
     if (props.field.type == "enum") {
         return label(<SelectInput {...inputProps}/>)
-    }
-    if (props.field.type == "datetime") {
-        return label(<DateInput {...inputProps}/>)
     }
     if (props.field.type == "number") {
         return label(<NumberInput {...inputProps}/>)

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useREST } from "../services/API/RESTContext";
-import BoxButton from "./base/BoxButton";
+
 
 export default function EntityTable(props) {
 

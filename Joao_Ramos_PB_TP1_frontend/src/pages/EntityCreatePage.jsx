@@ -3,9 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useREST } from '../services/API/RESTContext';
 import { useAuth } from '../services/UserContext';
 
-import Breadcrumb from '../components/base/BreadCrum';
 import EntityForm from '../components/EntityForm';
-import Centralized from '../layout/Centralized';
 import BoxButton from '../components/base/BoxButton';
 
 export default function EntityCreatePage(props){

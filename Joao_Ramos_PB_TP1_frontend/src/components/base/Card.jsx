@@ -1,7 +1,5 @@
 import { COLORS } from "../../services/StyleService"
 
-
-
 export default function Card(props){
     return(
         <div style={{ ...style, ...props.style}} >
