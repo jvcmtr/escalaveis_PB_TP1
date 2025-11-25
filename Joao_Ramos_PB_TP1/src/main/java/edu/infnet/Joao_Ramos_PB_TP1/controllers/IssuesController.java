@@ -59,7 +59,7 @@ public class IssuesController {
 
             Issue updatedIssue = issueRepository.saveEntity(issue, username);
             
-            historyService.entityCreated(updatedIssue);
+            historyService.entityUpdated(updatedIssue);
             return ResponseEntity.ok(updatedIssue);
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
