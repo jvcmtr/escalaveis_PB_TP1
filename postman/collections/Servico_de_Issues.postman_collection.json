@@ -85,7 +85,7 @@
         "method": "PUT",
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"title\" : \"Titulo {{$isoTimestamp}}\",\r\n    \"description\" : \"Descrição {{$isoTimestamp}} : {{$randomLoremWords}} {{$randomLoremWords}}\",\r\n    \"status\" : \"RESOLVED\"\r\n}",
+          "raw": "{\r\n    \"title\" : \"Titulo {{$isoTimestamp}}\",\r\n    \"description\" : \"Descrição {{$isoTimestamp}} : {{$randomLoremWords}} {{$randomLoremWords}}\",\r\n    \"status\": \"RESOLVED\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -111,7 +111,7 @@
           "variable": [
             {
               "key": "id",
-              "value": "44"
+              "value": "75"
             }
           ]
         }
@@ -150,12 +150,12 @@
   ],
   "variable": [
     {
-      "id": "568f93e5-d92f-4919-98f1-73c595cc9da5",
+      "id": "02d703db-b716-4a6a-b459-cb592374848b",
       "key": "BASE_URL",
       "value": ""
     },
     {
-      "id": "81eb19bd-e9b5-4487-9a18-c7eeb7135457",
+      "id": "15a8839a-2d28-432c-85e4-295449804815",
       "key": "USERNAME",
       "value": ""
     }

@@ -1,0 +1,6 @@
+
+spring:
+    datasource:
+        url: jdbc:h2:mem:pb_tp1_issuetrackertestdb
+        username: joao_ramos_teste
+        password: 12345678_t

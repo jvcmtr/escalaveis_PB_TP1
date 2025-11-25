@@ -46,7 +46,7 @@ public class IssuesController {
         issue.setStatus(EIssueStatus.OPEN);
                 
         var e = issueRepository.saveEntity(issue, username);
-        historyService.recordAction("CREATE", username, e);
+        historyService.entityCreated(e);
         return e ;
     }
 
@@ -59,7 +59,7 @@ public class IssuesController {
 
             Issue updatedIssue = issueRepository.saveEntity(issue, username);
             
-            historyService.recordAction("UPDATE", username, updatedIssue);
+            historyService.entityCreated(updatedIssue);
             return ResponseEntity.ok(updatedIssue);
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -70,7 +70,7 @@ public class IssuesController {
 
             issueRepository.delete(issue, username);
 
-            historyService.recordAction("DELETE", username, new Issue());
+            historyService.entityDeleted(issue);
             return ResponseEntity.noContent().<Void>build();
         }).orElseGet(() -> ResponseEntity.notFound().build());
     }

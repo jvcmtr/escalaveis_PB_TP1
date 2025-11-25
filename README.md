@@ -17,23 +17,27 @@ Projeto React que consome os endpoints da API.
 
 ### Rodando Localmente
 1. Faça o download do repositorio 
-2. Rode a **Serviço de Issues**
+2. Rode o EventBroker RabbitMQ
+    ```
+    docker run -e RABBITMQ_DEFAULT_USER=EvBrokerJoao_Ramos_PB -e RABBITMQ_DEFAULT_PASS=12345678_ev -p 5672:5672 -p 15672:15672  rabbitmq:3-management
+    ```
+3. Rode a **Serviço de Issues**
     ```
     cd Joao_Ramos_PB_TP1/
     mvn spring-boot:run
     ```
-3. Em um novo terminal, rode o **Serviço de Auditoria**
+4. Em um novo terminal, rode o **Serviço de Auditoria**
     ```
     cd HistoryService/
     mvn spring-boot:run
     ```
-4. Em um novo terminal, rode o app **frontend**
+5. Em um novo terminal, rode o app **frontend**
     ```
     cd Joao_Ramos_PB_TP1/
     npm install
     npm run
     ```
-5. Acesse o portal atravéz de `http://localhost:3000`
+6. Acesse o portal atravéz de `http://localhost:3000`
 
 ### Postman
 É possivel acessar as APIs do **Serviço de Issues** e o **Serviço de Auditoria** atravéz do postman usando as colections disponiveis:
