@@ -1,0 +1,19 @@
+spring:
+    application.name: Joao_Ramos_PB_TP1
+    
+    h2.console.enabled: true
+    jpa.hibernate.ddl-auto: update
+    datasource:
+            url: jdbc:h2:file:./data/pb_tp1_issuetrackerdb;
+            driverClassName: org.h2.Driver
+            username: joao_ramos
+            password: 12345678
+
+    rabbitmq:
+        host: localhost 
+        port: 5672
+        username: EvBrokerJoao_Ramos_PB
+        password: 12345678_ev
+
+server:
+    port: 8080

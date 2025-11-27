@@ -13,13 +13,16 @@
         "header": [
           {
             "key": "source",
-            "value": "{{SOURCE}}",
-            "type": "text"
+            "value": "Joao_Ramos_PB_TP1 App",
+            "description": "Fonte do log. Use {{SOURCE}} para pegar infos criadas atravéz do postman",
+            "type": "text",
+            "disabled": true
           },
           {
             "key": "username",
             "value": "{{USERNAME}}",
-            "type": "text"
+            "type": "text",
+            "disabled": true
           },
           {
             "key": "entityName",
@@ -103,17 +106,17 @@
   ],
   "variable": [
     {
-      "id": "a50778ea-99ce-475e-a1aa-37f343e3a9c5",
+      "id": "4949c8ff-0308-40a4-86fa-08e7c4dc78fd",
       "key": "USERNAME",
       "value": ""
     },
     {
-      "id": "f509a984-c93e-4025-9ec0-d7dbc432176e",
+      "id": "bd18eecc-4524-4ff0-9f1c-b5ffbc2b94de",
       "key": "SOURCE",
       "value": ""
     },
     {
-      "id": "07356844-e757-49be-9870-0203b5df24a8",
+      "id": "2ea48b52-5ca0-4554-8bb3-e9131edabc88",
       "key": "HISTORY_BASE_URL",
       "value": ""
     }

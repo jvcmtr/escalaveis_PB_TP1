@@ -18,32 +18,23 @@ import edu.infnet.HistoryService.models.DTOs.CreateHistoryDTO;
 import edu.infnet.HistoryService.models.HistoryEntry;
 import edu.infnet.HistoryService.repositories.HistoryEntryRepository;
 import edu.infnet.HistoryService.repositories.HistorySpecs;
+import edu.infnet.HistoryService.services.HistoryService;
 
 @RestController
 @RequestMapping("/history")
 public class HistoryEntryController {
 
     @Autowired private HistoryEntryRepository historyEntryRepository;
+    @Autowired private HistoryService historyService;
 
     // Create a new HistoryEntry
     @PostMapping
     public ResponseEntity<HistoryEntry> createHistoryEntry(@RequestBody CreateHistoryDTO createInfo) {
         
+        // Delega implementação para o event listener para manter o comportamento.
         var entry = createInfo.asHistoryEntry();
-        try{
-            Specification<HistoryEntry> spec = Specification
-                .where(HistorySpecs.propertyMatch("source", createInfo.getSource()))
-                .and(HistorySpecs.propertyMatch("entityName", createInfo.getEntityName()))
-                .and(HistorySpecs.propertyMatch("entityId", createInfo.getEntityId()));
-            var existing = historyEntryRepository
-                .findAll(spec, Sort.by("date").descending())
-                .getFirst();
-            entry.setOldStateJSON(existing.getNewStateJSON());
-        }
-        catch (Exception e){}
-        
-        HistoryEntry savedEntry = historyEntryRepository.save(entry);
-        return ResponseEntity.ok(savedEntry);
+        var saved = historyService.createEntry(entry);
+        return ResponseEntity.ok(saved);
     }
 
     @GetMapping()
