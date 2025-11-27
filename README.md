@@ -43,7 +43,7 @@ Projeto React que consome os endpoints da API.
 1. Baixe e rode a imagem do frontend
     ```
     docker pull joaoramos15285/escalaveis_pb_frontend:v0.1
-    docker run -d -p 3000:3000 joaoramos15285/escalaveis_pb_frontend:v0.1
+    docker run -d -p 3000:3000 --name pb_frontend 
     ```
 2. Baixe e rode a imagem do RabbitMQ
     ```
@@ -52,12 +52,12 @@ Projeto React que consome os endpoints da API.
 3. Baixe e rode a imagem da API
     ```
     docker pull joaoramos15285/escalaveis_pb_api:v0.1
-    docker run -d -p 8080:8080 joaoramos15285/escalaveis_pb_api:v0.1
+    docker run -d -p 8080:8080 --name pb_api joaoramos15285/escalaveis_pb_api:v0.1 
     ```
 4. Baixe e rode a imagem do History
     ```
     docker pull joaoramos15285/escalaveis_pb_history:v0.1
-    docker run -d -p 8081:8081 joaoramos15285/escalaveis_pb_history:v0.1
+    docker run -d -p 8081:8081 --name pb_history joaoramos15285/escalaveis_pb_history:v0.1 
     ```
 
 ### Postman
